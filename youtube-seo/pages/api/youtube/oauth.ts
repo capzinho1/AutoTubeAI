@@ -14,10 +14,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       access_type: "offline",
       scope: [
         "https://www.googleapis.com/auth/youtube.upload",
-        "https://www.googleapis.com/auth/userinfo.profile",
+        "https://www.googleapis.com/auth/userinfo.profile", 
         "https://www.googleapis.com/auth/userinfo.email",
       ],
       prompt: "consent",
+      // Agregar parámetros para mejor UX durante verificación
+      include_granted_scopes: true,
+      state: 'autotubeai_auth'
     });
     res.redirect(url);
   } else if (req.method === "POST") {

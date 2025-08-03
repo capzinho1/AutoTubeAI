@@ -87,6 +87,54 @@ export default function Navbar() {
         >
           🚀 Subir Video
         </Link>
+        
+        <Link 
+          href="/privacy" 
+          style={{
+            textDecoration: 'none',
+            color: '#fff',
+            padding: '0.25rem 0.5rem',
+            borderRadius: '6px',
+            fontSize: '0.85rem',
+            opacity: 0.7,
+            transition: 'all 0.3s ease',
+            border: '1px solid rgba(255, 255, 255, 0.1)'
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.opacity = '1';
+            e.currentTarget.style.borderColor = 'rgba(255, 107, 157, 0.5)';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.opacity = '0.7';
+            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+          }}
+        >
+          🔒 Privacidad
+        </Link>
+        
+        <Link 
+          href="/terms" 
+          style={{
+            textDecoration: 'none',
+            color: '#fff',
+            padding: '0.25rem 0.5rem',
+            borderRadius: '6px',
+            fontSize: '0.85rem',
+            opacity: 0.7,
+            transition: 'all 0.3s ease',
+            border: '1px solid rgba(255, 255, 255, 0.1)'
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.opacity = '1';
+            e.currentTarget.style.borderColor = 'rgba(108, 99, 255, 0.5)';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.opacity = '0.7';
+            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+          }}
+        >
+          📋 Términos
+        </Link>
       </div>
     </nav>
   );

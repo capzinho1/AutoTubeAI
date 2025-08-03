@@ -4,6 +4,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import styles from "../styles/styles.module.css";
 
 export default function Home() {
@@ -119,10 +120,7 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className={styles.footer}>
-          <p>&copy; 2025 AutoTubeAI. Todos los derechos reservados.</p>
-          <p>Desarrollado con ❤️ para creators ambiciosos</p>
-        </footer>
+        <Footer />
       </div>
     </>
   );

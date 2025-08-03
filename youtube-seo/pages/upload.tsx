@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Head from 'next/head';
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import styles from "../styles/styles.module.css";
 
 interface SEOData {
@@ -844,6 +845,8 @@ export default function Upload() {
             </>
           )}
         </div>
+        
+        <Footer />
       </div>
     </>
   );
