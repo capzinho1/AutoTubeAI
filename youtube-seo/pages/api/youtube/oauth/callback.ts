@@ -1,16 +1,28 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { google } from "googleapis";
 
-const oauth2Client = new google.auth.OAuth2(
-  process.env.GOOGLE_CLIENT_ID,
-  process.env.GOOGLE_CLIENT_SECRET,
-  `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/youtube/oauth/callback`
-);
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  console.log('🔧 OAuth Callback - Variables de entorno:');
+  console.log('GOOGLE_CLIENT_ID:', process.env.GOOGLE_CLIENT_ID ? 'SET' : 'NOT SET');
+  console.log('GOOGLE_CLIENT_SECRET:', process.env.GOOGLE_CLIENT_SECRET ? 'SET' : 'NOT SET');
+  console.log('NEXTAUTH_URL:', process.env.NEXTAUTH_URL);
+  console.log('YOUTUBE_REDIRECT_URI:', process.env.YOUTUBE_REDIRECT_URI);
+  
+  const redirectUri = process.env.YOUTUBE_REDIRECT_URI || 
+                     `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/youtube/oauth/callback`;
+  
+  console.log('🔧 Using redirect URI:', redirectUri);
+  
+  const oauth2Client = new google.auth.OAuth2(
+    process.env.GOOGLE_CLIENT_ID,
+    process.env.GOOGLE_CLIENT_SECRET,
+    redirectUri
+  );
+
   const { code } = req.query;
 
   if (!code || typeof code !== "string") {
+    console.log('❌ No authorization code received');
     return res.status(400).send(`
       <html>
         <body>
