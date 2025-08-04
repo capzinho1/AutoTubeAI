@@ -115,16 +115,9 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 🔗 Enlaces
 
-- [Demo en vivo](https://autotube-ai.vercel.app) *(próximamente)*
-- [Documentación](https://github.com/tu-usuario/autotube-ai/wiki) *(próximamente)*
+
 - [Issues](https://github.com/tu-usuario/autotube-ai/issues)
 
-## 🙏 Agradecimientos
-
-- [Next.js](https://nextjs.org/) por el framework
-- [DeepSeek](https://platform.deepseek.com/) por la API de IA
-- [YouTube API](https://developers.google.com/youtube) por la integración
-- [Vercel](https://vercel.com/) por el hosting
 
 ---
 
